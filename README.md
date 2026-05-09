@@ -64,9 +64,9 @@ https://github.com/Meloner423/GPX-Motion-Generator-Support
 
 ## 应用用途 / App Purpose
 
-This app only creates GPX files selected and saved by the user. It does not connect to an iPhone, does not modify device location directly, and does not control third-party apps.
-
 本应用只负责生成并导出用户选择保存的 GPX 文件。应用不会连接 iPhone，不会直接修改设备定位，也不会控制第三方 App。
+
+This app only creates GPX files selected and saved by the user. It does not connect to an iPhone, does not modify device location directly, and does not control third-party apps.
 
 ## 隐私 / Privacy
 

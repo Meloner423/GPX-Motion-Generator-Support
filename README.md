@@ -19,17 +19,18 @@ GPX Motion Generator is a macOS app for drawing routes on a map, previewing gene
 
 ## 应用截图 / Screenshots
 
-### 地图定位模式
-
-![地图定位模式](assets/screenshot-map-navigation.png)
-
-### 轨迹编辑模式
-
-![轨迹编辑模式](assets/screenshot-track-editing.png)
-
-### 轨迹预览
-
-![轨迹预览](assets/screenshot-preview.png)
+<table>
+  <tr>
+    <td align="center"><strong>地图定位模式</strong></td>
+    <td align="center"><strong>轨迹编辑模式</strong></td>
+    <td align="center"><strong>轨迹预览</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshot-map-navigation.png" alt="地图定位模式" width="300"></td>
+    <td><img src="assets/screenshot-track-editing.png" alt="轨迹编辑模式" width="300"></td>
+    <td><img src="assets/screenshot-preview.png" alt="轨迹预览" width="300"></td>
+  </tr>
+</table>
 
 ## 基本使用方式 / Basic Usage
 

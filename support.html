@@ -29,11 +29,34 @@
       padding-top: 18px;
       border-top: 1px solid #e7e9ee;
     }
-    .screenshot {
+    .screenshot-row {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 4px 0 16px;
+      scroll-snap-type: x proximity;
+    }
+    .screenshot-card {
+      flex: 0 0 calc((100% - 36px) / 3);
+      min-width: 280px;
+      margin: 0;
+      scroll-snap-align: start;
+    }
+    .screenshot-card img {
       width: 100%;
       border-radius: 14px;
       border: 1px solid #e7e9ee;
-      margin: 10px 0 24px;
+      display: block;
+    }
+    .screenshot-card figcaption {
+      margin-top: 8px;
+      font-weight: 600;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      .screenshot-card {
+        flex-basis: 82%;
+      }
     }
   </style>
 </head>
@@ -48,12 +71,20 @@
   <p>导出的 GPX 文件用于开发调试流程，例如在 Xcode 中使用 Simulate Location 测试定位相关功能。</p>
 
   <h2>应用截图</h2>
-  <h3>地图定位模式</h3>
-  <img class="screenshot" src="assets/screenshot-map-navigation.png" alt="地图定位模式">
-  <h3>轨迹编辑模式</h3>
-  <img class="screenshot" src="assets/screenshot-track-editing.png" alt="轨迹编辑模式">
-  <h3>轨迹预览</h3>
-  <img class="screenshot" src="assets/screenshot-preview.png" alt="轨迹预览">
+  <div class="screenshot-row" aria-label="应用截图">
+    <figure class="screenshot-card">
+      <img src="assets/screenshot-map-navigation.png" alt="地图定位模式">
+      <figcaption>地图定位模式</figcaption>
+    </figure>
+    <figure class="screenshot-card">
+      <img src="assets/screenshot-track-editing.png" alt="轨迹编辑模式">
+      <figcaption>轨迹编辑模式</figcaption>
+    </figure>
+    <figure class="screenshot-card">
+      <img src="assets/screenshot-preview.png" alt="轨迹预览">
+      <figcaption>轨迹预览</figcaption>
+    </figure>
+  </div>
 
   <h2>获取帮助</h2>
   <p>如果你在使用过程中遇到问题，可以通过 GitHub Issues 页面反馈：</p>

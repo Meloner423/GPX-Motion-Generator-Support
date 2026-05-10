@@ -6,7 +6,7 @@
   <title>GPX运动轨迹生成器 技术支持</title>
   <style>
     body {
-      max-width: 980px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 32px 18px 64px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -53,37 +53,52 @@
       font-weight: 600;
       text-align: center;
     }
-    .guide-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 14px 0 8px;
+    h3 {
+      margin: 0 0 10px;
     }
-    .button-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 16px;
-      border-radius: 10px;
-      background: #0969da;
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .button-link.secondary {
-      background: #eef2f7;
-      color: #20242a;
+    .muted {
+      color: #5f6875;
     }
     .usage-list {
       padding-left: 1.35em;
     }
+    .feature-columns,
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .feature-card,
+    .guide-card {
+      border: 1px solid #e7e9ee;
+      border-radius: 14px;
+      background: #fbfcfe;
+      padding: 18px;
+    }
+    .guide-card {
+      align-self: start;
+    }
+    .guide-section {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #e7e9ee;
+    }
+    .guide-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+    .guide-section h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
     @media (max-width: 760px) {
+      .feature-columns,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
       .screenshot-card {
         flex-basis: 82%;
-      }
-      .button-link {
-        width: 100%;
       }
     }
   </style>
@@ -97,6 +112,31 @@
 
   <p>GPX运动轨迹生成器是一款 macOS 应用，用于在地图上绘制运动路线、生成轨迹预览，并导出 GPX 文件。</p>
   <p>导出的 GPX 文件用于开发调试流程，例如在 Xcode 中使用 Simulate Location 测试定位相关功能。</p>
+  <p class="muted">GPX Motion Generator is a macOS app for drawing routes on a map, previewing generated movement tracks, and exporting GPX files for development and testing workflows.</p>
+
+  <h2>功能概览 / Highlights</h2>
+  <div class="feature-columns">
+    <section class="feature-card">
+      <h3>中文</h3>
+      <ul>
+        <li>在 Apple 地图上搜索地点并切换平面或卫星视图。</li>
+        <li>使用锚点和贝塞尔控制柄绘制路线。</li>
+        <li>按圈数、单圈偏移范围和多圈偏移范围生成轨迹。</li>
+        <li>预览生成轨迹和移动位置图标。</li>
+        <li>使用 macOS 标准保存窗口导出 GPX 文件。</li>
+      </ul>
+    </section>
+    <section class="feature-card">
+      <h3>English</h3>
+      <ul>
+        <li>Search locations on Apple Maps and switch between flat and satellite map styles.</li>
+        <li>Draw routes with anchor points and Bezier handles.</li>
+        <li>Generate tracks using laps, single-lap offset, and multi-lap offset options.</li>
+        <li>Preview generated tracks and the moving location marker.</li>
+        <li>Export GPX files through the standard macOS save dialog.</li>
+      </ul>
+    </section>
+  </div>
 
   <h2>基本使用方式</h2>
   <ol class="usage-list">
@@ -109,9 +149,125 @@
     <li>点击导出 GPX，通过 macOS 标准保存窗口选择文件名和保存位置。</li>
   </ol>
 
-  <div class="guide-actions" aria-label="详细教程">
-    <a class="button-link" href="app-guide.html" target="_blank" rel="noopener">如何使用GPX运动轨迹生成器</a>
-    <a class="button-link secondary" href="xcode-gpx-guide.html" target="_blank" rel="noopener">如何在Xcode中使用GPX调试定位</a>
+  <h2 id="detailed-guides">详细教程</h2>
+  <div class="guide-grid" aria-label="详细教程">
+    <article class="guide-card">
+      <h3>GPX轨迹生成器教程</h3>
+      <p class="muted">在真实地图上画出基础曲线，生成带时间戳的 GPX 运动轨迹，再导出给支持 GPX 的开发工具使用。</p>
+
+      <section class="guide-section">
+        <h4>基本流程</h4>
+        <ol>
+          <li>在右侧地图搜索或拖动到需要绘制轨迹的位置。</li>
+          <li>切换到轨迹编辑模式，点击地图添加锚点，至少 3 个锚点形成闭环。</li>
+          <li>拖动黄色锚点调整路线位置，拖动控制柄调整弯道形状。</li>
+          <li>设置圈数和偏移范围后，点击生成轨迹。</li>
+          <li>确认黄色生成轨迹符合预期后，点击导出 GPX。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>圈数</h4>
+        <ol>
+          <li>圈数表示导出的轨迹围绕路线重复几圈。</li>
+          <li>例如圈数为 4 时，GPX 会包含 4 圈连续轨迹。</li>
+          <li>圈数越多，导出的点位和总运动时间也会增加。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>GPX时间档位</h4>
+        <ol>
+          <li>GPX时间档位控制导出文件内部的时间戳密度。</li>
+          <li>默认 1 分钟档适合当前版本的基础测试节奏。</li>
+          <li>不同读取端处理 GPX 的方式可能不同，实际播放时间可能有差异。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>偏移范围</h4>
+        <ol>
+          <li>单圈偏移控制每一圈内部轨迹的轻微摆动程度。</li>
+          <li>多圈偏移控制不同圈之间的整体分散程度。</li>
+          <li>数值越小越贴近原始曲线，数值越大变化越明显。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>控制柄与地图模式</h4>
+        <ol>
+          <li>独立：入口控制柄和出口控制柄互不影响。</li>
+          <li>镜像：两侧控制柄保持相反方向和相同长度。</li>
+          <li>对称：同步方向，但保留另一侧原有长度。</li>
+          <li>地图定位模式用于移动、缩放和搜索地图。</li>
+          <li>轨迹编辑模式用于添加、拖动和删除锚点。</li>
+        </ol>
+      </section>
+    </article>
+
+    <article class="guide-card">
+      <h3>Xcode使用教程</h3>
+      <p class="muted">用于开发调试时通过 Xcode 的 Simulate Location 读取 GPX 轨迹；不要用于绕过第三方 App 规则。</p>
+
+      <section class="guide-section">
+        <h4>安装 Xcode</h4>
+        <ol>
+          <li>打开 Mac App Store，搜索 Xcode，点击获取并安装。</li>
+          <li>第一次打开 Xcode 时，按提示安装额外组件。</li>
+          <li>打开 Xcode 设置，进入 Accounts，登录 Apple ID。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>准备 iPhone</h4>
+        <ol>
+          <li>用 USB 连接 iPhone 和 Mac，iPhone 上点击信任此电脑。</li>
+          <li>在 iPhone 设置中打开隐私与安全性，进入开发者模式并开启。</li>
+          <li>按系统提示重启 iPhone，重启后再次确认开启开发者模式。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>创建调试项目</h4>
+        <ol>
+          <li>在 Xcode 选择 File &gt; New &gt; Project。</li>
+          <li>选择 iOS &gt; App，填写任意项目名称。</li>
+          <li>Interface 选择 SwiftUI，Language 选择 Swift。</li>
+          <li>在 Signing &amp; Capabilities 中选择你的开发团队。</li>
+          <li>运行设备选择 iPhone，然后点击运行按钮。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>导入 GPX 文件</h4>
+        <ol>
+          <li>在本工具中生成轨迹并导出 .gpx 文件。</li>
+          <li>回到 Xcode，把导出的 .gpx 文件拖入项目导航栏。</li>
+          <li>如果出现选项窗口，可以勾选 Copy items if needed，并确保 iOS App target 被选中。</li>
+          <li>GPX 文件加入项目后，Xcode 才能在调试定位菜单中看到它。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>调试定位</h4>
+        <ol>
+          <li>确保 iPhone 上的调试 App 正在由 Xcode 运行。</li>
+          <li>在 Xcode 菜单栏选择 Debug &gt; Simulate Location。</li>
+          <li>选择刚导入的 GPX 文件名。</li>
+          <li>Xcode 会在当前开发调试会话中按 GPX 文件模拟定位。</li>
+          <li>停止调试、断开连接或选择 None 后，模拟定位会停止。</li>
+        </ol>
+      </section>
+
+      <section class="guide-section">
+        <h4>常见问题</h4>
+        <ol>
+          <li>如果看不到 iPhone，先解锁手机，并确认已经信任 Mac。</li>
+          <li>如果提示 Signing 错误，回到 Signing &amp; Capabilities 选择 Team。</li>
+          <li>如果 Simulate Location 里没有 GPX 文件，确认 GPX 已加入 iOS 项目且 target 被勾选。</li>
+        </ol>
+      </section>
+    </article>
   </div>
 
   <h2>应用截图</h2>
@@ -133,11 +289,14 @@
   <h2>获取帮助</h2>
   <p>如果你在使用过程中遇到问题，可以通过 GitHub Issues 页面反馈：</p>
   <p><a href="https://github.com/Meloner423/GPX-Motion-Generator-Support/issues">https://github.com/Meloner423/GPX-Motion-Generator-Support/issues</a></p>
+  <p class="muted">If you encounter any issues while using the app, please report them on the GitHub Issues page:</p>
+  <p><a href="https://github.com/Meloner423/GPX-Motion-Generator-Support/issues">https://github.com/Meloner423/GPX-Motion-Generator-Support/issues</a></p>
 
   <h2>应用说明</h2>
   <p>本应用只负责生成并导出用户选择保存的 GPX 文件。</p>
   <p>本应用不会连接 iPhone，不会直接修改设备定位，也不会控制第三方 App。</p>
   <p>本应用不会收集、上传或分享用户创建的 GPX 文件。</p>
+  <p class="muted">This app only creates and exports GPX files saved by the user. It does not collect, upload, or share user-created GPX files.</p>
 
   <h2>常见问题</h2>
   <p>如果导出 GPX 失败，请确认已经在 macOS 标准保存窗口中选择了可写入的位置。</p>

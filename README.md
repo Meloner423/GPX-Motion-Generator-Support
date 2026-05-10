@@ -16,8 +16,6 @@ GPX Motion Generator is a macOS app for drawing routes on a map, previewing gene
 - 预览生成轨迹和移动位置图标
 - 使用 macOS 标准保存窗口导出 GPX 文件
 
-English:
-
 - Search locations on Apple Maps and switch between flat and satellite map styles
 - Draw routes with anchor points and Bezier handles
 - Generate tracks using laps, single-lap offset, and multi-lap offset options
@@ -48,8 +46,6 @@ English:
 5. 设置圈数、单圈偏移范围和多圈偏移范围。
 6. 点击生成轨迹，并使用预览确认轨迹效果。
 7. 点击导出 GPX，通过 macOS 标准保存窗口选择文件名和保存位置。
-
-English:
 
 1. Search for or move to a location on the map.
 2. Switch to track editing mode.

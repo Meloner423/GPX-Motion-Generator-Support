@@ -1,0 +1,121 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>如何在Xcode中使用GPX调试定位</title>
+  <style>
+    body {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+      color: #20242a;
+    }
+    a {
+      color: #0969da;
+    }
+    header {
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #5f6875;
+      margin: 0;
+    }
+    .section {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid #e7e9ee;
+      border-radius: 12px;
+      background: #fbfcfe;
+    }
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+    }
+    ol {
+      margin: 0;
+      padding-left: 1.35em;
+    }
+    .back {
+      display: inline-flex;
+      margin-bottom: 18px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <a class="back" href="support.html">返回技术支持首页</a>
+
+  <header>
+    <h1>如何在Xcode中使用GPX调试定位</h1>
+    <p class="subtitle">用于开发调试时通过 Xcode 的 Simulate Location 读取 GPX 轨迹。先用本工具导出 GPX，再在 Xcode 的 iPhone 调试会话中选择该 GPX 文件；不要用于绕过第三方 App 规则。</p>
+  </header>
+
+  <section class="section">
+    <h2>1. 安装 Xcode</h2>
+    <ol>
+      <li>打开 Mac App Store，搜索 Xcode，点击获取并安装。</li>
+      <li>第一次打开 Xcode 时，按提示安装额外组件。</li>
+      <li>打开 Xcode 设置，进入 Accounts，登录你的 Apple ID。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>2. 准备 iPhone</h2>
+    <ol>
+      <li>用 USB 连接 iPhone 和 Mac，iPhone 上点击信任此电脑。</li>
+      <li>在 iPhone 设置中打开隐私与安全性，进入开发者模式并开启。</li>
+      <li>按系统提示重启 iPhone，重启后再次确认开启开发者模式。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>3. 创建一个 iPhone 调试项目</h2>
+    <ol>
+      <li>在 Xcode 选择 File &gt; New &gt; Project。</li>
+      <li>选择 iOS &gt; App，填写任意项目名称，例如 GPXLocationTest。</li>
+      <li>Interface 选择 SwiftUI，Language 选择 Swift。</li>
+      <li>打开项目的 Signing &amp; Capabilities，Team 选择你的 Apple ID 开发团队。</li>
+      <li>左上角运行设备选择你的 iPhone，然后点击运行按钮。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>4. 导入 GPX 文件</h2>
+    <ol>
+      <li>在本工具中画好轨迹，点击生成轨迹，再点击导出GPX。</li>
+      <li>回到 Xcode，把导出的 .gpx 文件拖入项目导航栏。</li>
+      <li>如果出现选项窗口，可以勾选 Copy items if needed，并确保你的 iOS App target 被选中。</li>
+      <li>GPX 文件加入项目后，Xcode 才能在调试定位菜单中看到它。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>5. 在 Xcode 中调试定位</h2>
+    <ol>
+      <li>确保 iPhone 上的调试 App 正在由 Xcode 运行。</li>
+      <li>在 Xcode 菜单栏选择 Debug &gt; Simulate Location。</li>
+      <li>选择刚导入的 GPX 文件名。</li>
+      <li>Xcode 会在当前开发调试会话中按 GPX 文件的经纬度和时间戳模拟定位。</li>
+      <li>停止调试、断开连接或选择 None 后，模拟定位会停止。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>6. 常见问题</h2>
+    <ol>
+      <li>如果看不到 iPhone，先解锁手机，并确认已经信任 Mac。</li>
+      <li>如果提示 Signing 错误，回到 Signing &amp; Capabilities 选择 Team。</li>
+      <li>如果 Simulate Location 里没有 GPX 文件，确认 GPX 已加入 iOS 项目且 target 被勾选。</li>
+      <li>这个流程只用于开发调试，不用于绕过第三方 App 规则；不同 iOS 版本和 App 场景下，定位模拟效果可能不同。</li>
+    </ol>
+  </section>
+</body>
+</html>

@@ -53,9 +53,37 @@
       font-weight: 600;
       text-align: center;
     }
+    .guide-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 14px 0 8px;
+    }
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 10px;
+      background: #0969da;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button-link.secondary {
+      background: #eef2f7;
+      color: #20242a;
+    }
+    .usage-list {
+      padding-left: 1.35em;
+    }
     @media (max-width: 760px) {
       .screenshot-card {
         flex-basis: 82%;
+      }
+      .button-link {
+        width: 100%;
       }
     }
   </style>
@@ -69,6 +97,22 @@
 
   <p>GPX运动轨迹生成器是一款 macOS 应用，用于在地图上绘制运动路线、生成轨迹预览，并导出 GPX 文件。</p>
   <p>导出的 GPX 文件用于开发调试流程，例如在 Xcode 中使用 Simulate Location 测试定位相关功能。</p>
+
+  <h2>基本使用方式</h2>
+  <ol class="usage-list">
+    <li>在地图上搜索地点，或手动移动到需要绘制轨迹的位置。</li>
+    <li>切换到轨迹编辑模式。</li>
+    <li>点击地图放置锚点，至少添加 3 个锚点形成闭环路线。</li>
+    <li>拖动锚点和贝塞尔控制柄，调整路线位置和弯道形状。</li>
+    <li>设置圈数、单圈偏移范围和多圈偏移范围。</li>
+    <li>点击生成轨迹，并使用预览确认轨迹效果。</li>
+    <li>点击导出 GPX，通过 macOS 标准保存窗口选择文件名和保存位置。</li>
+  </ol>
+
+  <div class="guide-actions" aria-label="详细教程">
+    <a class="button-link" href="app-guide.html" target="_blank" rel="noopener">如何使用GPX运动轨迹生成器</a>
+    <a class="button-link secondary" href="xcode-gpx-guide.html" target="_blank" rel="noopener">如何在Xcode中使用GPX调试定位</a>
+  </div>
 
   <h2>应用截图</h2>
   <div class="screenshot-row" aria-label="应用截图">

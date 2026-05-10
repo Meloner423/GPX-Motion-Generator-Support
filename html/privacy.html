@@ -1,25 +1,151 @@
-
 <!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GPX运动轨迹生成器 隐私政策</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #1f2328;
+      --muted: #626c7a;
+      --line: #e6e9ef;
+      --panel: #fbfcfe;
+      --blue: #0969da;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background: #ffffff;
+    }
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 42px 20px 64px;
+    }
+    .back {
+      display: inline-flex;
+      margin-bottom: 20px;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .back:hover {
+      text-decoration: underline;
+    }
+    header {
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      letter-spacing: 0;
+    }
+    .meta {
+      margin: 0;
+      color: var(--muted);
+    }
+    .summary {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border: 1px solid #cfe1ff;
+      border-radius: 14px;
+      background: #f5f9ff;
+      color: #26384f;
+    }
+    section {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+    }
+    p {
+      margin: 0 0 10px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    ul {
+      margin: 8px 0 0;
+      padding-left: 1.35em;
+    }
+    li + li {
+      margin-top: 4px;
+    }
+    a {
+      color: var(--blue);
+      font-weight: 650;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>GPX运动轨迹生成器 隐私政策</h1>
-  <p>生效日期：2026年5月5日</p>
+  <main class="page">
+    <a class="back" href="support.html">返回技术支持首页</a>
 
-  <p>GPX运动轨迹生成器是一款 macOS 应用，用于在地图上绘制路线并导出 GPX 文件。</p>
+    <header>
+      <h1>GPX运动轨迹生成器 隐私政策</h1>
+      <p class="meta">生效日期：2026年5月5日</p>
+    </header>
 
-  <p>我们不会收集、存储、上传或分享用户的个人信息。</p>
+    <div class="summary">
+      <p>GPX运动轨迹生成器是一款 macOS 应用，用于在地图上绘制路线并导出 GPX 文件。我们不会收集、存储、上传或分享用户的个人信息。</p>
+    </div>
 
-  <p>本应用不包含账号系统，不包含广告，不包含第三方统计 SDK，不会将用户创建的 GPX 文件上传到服务器。用户导出的 GPX 文件仅保存在用户选择的位置。</p>
+    <section>
+      <h2>我们不会收集的数据</h2>
+      <ul>
+        <li>本应用不包含账号系统。</li>
+        <li>本应用不包含广告。</li>
+        <li>本应用不包含第三方统计 SDK。</li>
+        <li>本应用不会将用户创建的 GPX 文件上传到服务器。</li>
+      </ul>
+    </section>
 
-  <p>本应用使用 Apple MapKit 提供地图显示与地点搜索功能。地图和搜索相关服务由 Apple 提供，相关数据处理遵循 Apple 的隐私政策。</p>
+    <section>
+      <h2>GPX 文件与本地保存</h2>
+      <p>用户创建和导出的 GPX 文件仅保存在用户通过 macOS 标准保存窗口选择的位置。开发者不会访问、接收或保存这些文件。</p>
+    </section>
 
-  <p>如果用户通过 App Store 购买本应用，付款流程由 Apple 处理。开发者不会获得用户的银行卡号、支付密码等付款信息。</p>
+    <section>
+      <h2>地图与地点搜索</h2>
+      <p>本应用使用 Apple MapKit 提供地图显示与地点搜索功能。地图和搜索相关服务由 Apple 提供，相关数据处理遵循 Apple 的隐私政策。</p>
+    </section>
 
-  <p>如有隐私相关问题，可以通过 GitHub Issues 页面反馈：</p>
-  <p><a href="https://github.com/Meloner423/GPX-Motion-Generator-Support/issues">https://github.com/Meloner423/GPX-Motion-Generator-Support/issues</a></p>
+    <section>
+      <h2>购买与付款</h2>
+      <p>如果用户通过 App Store 购买本应用，付款流程由 Apple 处理。开发者不会获得用户的银行卡号、支付密码等付款信息。</p>
+    </section>
+
+    <section>
+      <h2>联系我们</h2>
+      <p>如有隐私相关问题，可以通过 GitHub Issues 页面反馈：</p>
+      <p><a href="https://github.com/Meloner423/GPX-Motion-Generator-Support/issues">https://github.com/Meloner423/GPX-Motion-Generator-Support/issues</a></p>
+    </section>
+
+    <footer>
+      <p>© 2026 Meloner. Privacy policy for GPX运动轨迹生成器.</p>
+    </footer>
+  </main>
 </body>
 </html>

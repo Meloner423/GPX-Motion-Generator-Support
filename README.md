@@ -15,7 +15,14 @@ GPX Motion Generator is a macOS app for drawing routes on a map, previewing gene
 - 按圈数、单圈偏移范围和多圈偏移范围生成轨迹
 - 预览生成轨迹和移动位置图标
 - 使用 macOS 标准保存窗口导出 GPX 文件
-- 不连接 iPhone，不直接修改设备定位，不控制第三方 App
+
+English:
+
+- Search locations on Apple Maps and switch between flat and satellite map styles
+- Draw routes with anchor points and Bezier handles
+- Generate tracks using laps, single-lap offset, and multi-lap offset options
+- Preview generated tracks and the moving location marker
+- Export GPX files through the standard macOS save dialog
 
 ## 应用截图 / Screenshots
 
@@ -52,14 +59,23 @@ English:
 6. Generate and preview the track.
 7. Export the GPX file using the standard macOS save dialog.
 
-## 详细教程 / Detailed Guides
+## 详细教程 / Detailed Guide
 
-- [如何使用 GPX运动轨迹生成器](app-guide.html)
-- [如何在 Xcode 中使用 GPX 调试定位](xcode-gpx-guide.html)
+详细教程已整合到技术支持页面中，页面内按左右两栏展示“GPX轨迹生成器教程”和“Xcode使用教程”：
+
+https://meloner423.github.io/GPX-Motion-Generator-Support/support.html#detailed-guides
+
+The detailed guide is embedded in the support page with two side-by-side sections: one for using the GPX track generator and one for using GPX files in Xcode:
+
+https://meloner423.github.io/GPX-Motion-Generator-Support/support.html#detailed-guides
 
 ## 技术支持 / Support
 
 如果你在使用过程中遇到问题，可以通过本仓库的 Issues 页面反馈：
+
+https://github.com/Meloner423/GPX-Motion-Generator-Support/issues
+
+If you encounter any issues while using the app, please report them on the repository Issues page:
 
 https://github.com/Meloner423/GPX-Motion-Generator-Support/issues
 

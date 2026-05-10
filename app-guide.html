@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>如何使用GPX运动轨迹生成器</title>
+  <style>
+    body {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+      color: #20242a;
+    }
+    a {
+      color: #0969da;
+    }
+    header {
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #5f6875;
+      margin: 0;
+    }
+    .section {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid #e7e9ee;
+      border-radius: 12px;
+      background: #fbfcfe;
+    }
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+    }
+    ol {
+      margin: 0;
+      padding-left: 1.35em;
+    }
+    .back {
+      display: inline-flex;
+      margin-bottom: 18px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <a class="back" href="support.html">返回技术支持首页</a>
+
+  <header>
+    <h1>如何使用GPX运动轨迹生成器</h1>
+    <p class="subtitle">这个工具的核心逻辑是：在真实地图上画出基础曲线，按 GPX 时间档位和圈数生成带时间戳的 GPX 运动轨迹，再导出给 Xcode 或其他支持 GPX 的开发工具使用。</p>
+  </header>
+
+  <section class="section">
+    <h2>1. 基本操作流程</h2>
+    <ol>
+      <li>先在右侧地图中搜索或拖动到你想绘制轨迹的位置。</li>
+      <li>切换到轨迹编辑模式，在地图上点击添加锚点，至少添加 3 个锚点形成闭环。</li>
+      <li>拖动黄色锚点调整路线位置，拖动两侧控制柄调整弯道形状。</li>
+      <li>设置圈数、偏移范围后，点击生成轨迹。</li>
+      <li>确认黄色生成轨迹符合预期后，点击导出GPX。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>2. 圈数</h2>
+    <ol>
+      <li>圈数表示导出的轨迹要围绕你画出的路线重复几圈。</li>
+      <li>例如圈数为 4 时，GPX 会包含 4 圈连续轨迹。</li>
+      <li>圈数越多，导出的 GPX 点位和总运动时间也会随之增加。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>3. GPX时间档位</h2>
+    <ol>
+      <li>GPX时间档位控制导出文件内部的时间戳密度，默认是 1 分钟档。</li>
+      <li>按当前实测，1 分钟档在读取端大约表现为 4 分 50 秒一圈。</li>
+      <li>数值越小通常速度越快；如果你想保持当前速度，可以继续使用默认 1 分钟档。</li>
+      <li>导出的 GPX 主要使用带毫秒时间戳的 wpt 点，并按整条路线累计距离分配时间。</li>
+      <li>不同读取端处理 GPX 的方式可能不同，因此实际播放时间可能会有小幅差异。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>4. 单圈偏移范围</h2>
+    <ol>
+      <li>单圈偏移控制每一圈内部轨迹的轻微摆动程度。</li>
+      <li>数值越小，生成轨迹越贴近原始曲线。</li>
+      <li>数值越大，每圈内部会有更明显的随机变化，路线看起来不那么机械。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>5. 多圈偏移范围</h2>
+    <ol>
+      <li>多圈偏移控制不同圈之间的整体分散程度。</li>
+      <li>数值越小，多圈轨迹会更接近彼此。</li>
+      <li>数值越大，每一圈会相对原始路线产生更明显的外扩或错位。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>6. 控制柄模式</h2>
+    <ol>
+      <li>独立：入口控制柄和出口控制柄互不影响，适合精细调整特殊弯道。</li>
+      <li>镜像：拖动一侧控制柄时，另一侧会以相反方向和相同长度同步，适合做平滑连续曲线。</li>
+      <li>对称：拖动一侧时保持另一侧原有长度，只同步方向，适合既要平滑又想保留局部弯道力度的情况。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>7. 地图定位模式</h2>
+    <ol>
+      <li>地图定位模式用于移动、缩放地图，以及搜索地点或地址。</li>
+      <li>在这个模式下，点击地图不会新增轨迹锚点。</li>
+      <li>先用这个模式把地图定位到目标区域，再切换到轨迹编辑模式开始画线。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>8. 轨迹编辑模式</h2>
+    <ol>
+      <li>轨迹编辑模式用于在地图上添加、拖动和删除锚点。</li>
+      <li>点击地图空白处会新增锚点，拖动黄色点可以移动锚点。</li>
+      <li>拖动青色和粉色控制柄可以改变曲线弧度。</li>
+      <li>选中锚点后按删除键可以删除该锚点。</li>
+      <li>路线生成后如果继续编辑锚点，需要重新点击生成轨迹。</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>9. 导出路径</h2>
+    <ol>
+      <li>默认路径显示为桌面；开启 App Sandbox 后，首次导出需要选择一次文件夹授权。</li>
+      <li>想导出到桌面时，在导出窗口中选择桌面即可。</li>
+      <li>导出时可以在保存窗口中修改 GPX 文件名。</li>
+    </ol>
+  </section>
+</body>
+</html>

@@ -4,6 +4,10 @@
   <img src="assets/app-icon.png" alt="GPX运动轨迹生成器 App Icon" width="160">
 </p>
 
+<p align="center">
+  <a href="https://apps.apple.com/cn/app/gpx%E8%BF%90%E5%8A%A8%E8%BD%A8%E8%BF%B9%E7%94%9F%E6%88%90%E5%99%A8/id6766509174?mt=12&uo=4">在 Mac App Store 打开 / Open on the Mac App Store</a>
+</p>
+
 GPX运动轨迹生成器是一款 macOS 应用，用于在地图上绘制运动路线、生成轨迹预览，并导出 GPX 文件。导出的 GPX 文件可用于开发调试流程，例如在 Xcode 中使用 Simulate Location 测试定位相关功能。
 
 GPX Motion Generator is a macOS app for drawing routes on a map, previewing generated movement tracks, and exporting GPX files. The exported GPX files are intended for development and testing workflows, such as using Xcode Simulate Location to test location-based features.
